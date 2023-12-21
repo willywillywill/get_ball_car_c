@@ -1,0 +1,3 @@
+D:/test_f/get_boll_car_c/cmake-build-debug/CMakeFiles/get_boll_car_c.dir
+D:/test_f/get_boll_car_c/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/test_f/get_boll_car_c/cmake-build-debug/CMakeFiles/rebuild_cache.dir
