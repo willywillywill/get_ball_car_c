@@ -83,29 +83,36 @@ pos pop_min_w(link_list *list, pos car_pos){
     }
     pos min_w_pos = node->node_pos;
 
-    if (node==list->head){
-
+    if (node==list->head) {
+        list->head = node->next;
+        list->head->ptr = NULL;
+    }else if (node==list->tail){
+        list->tail = node->ptr;
+        node->ptr->next = NULL;
+    }
+    else{
+        node->ptr->next = node->next;
+        node->next->ptr = node->ptr;
     }
 
+    free(node);
     return min_w_pos;
 };
 
 int main() {
     pos car_pos = {0,0};
     link_list *list = build();
-    pos node_pos1 = {0,1};
+    pos node_pos1 = {0,3};
     insert(list, node_pos1);
-
-    pos node_pos2 = {0,3};
-    insert(list, node_pos2);
-
     pos node_pos3 = {0,5};
     insert(list, node_pos3);
-
+    pos node_pos5 = {0,1};
+    insert(list, node_pos5);
     printList(list);
 
     pop_min_w(list, car_pos);
     printList(list);
+
 
     //printf("%d,%d \n", node.x,node.y);
 }
